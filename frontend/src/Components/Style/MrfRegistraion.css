@@ -1,0 +1,58 @@
+.mrf-registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #37B943;
+    height: 100vh;
+}
+.card{
+    width: 40vw;
+}
+.card .card-header{
+    border: none;
+}
+.card .card-header h4{
+    font-weight: bold;
+}
+.card .card-body form div{
+    height: 8vh;
+}
+.card .card-body form input::placeholder{
+    font-weight: 600;
+}
+.card .card-body form button{
+    background-color: #37B943;
+    width: 15vw;
+    color: #F5F5F5;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+.card .card-body form button:hover{
+    background-color: #F5F5F5;
+    color: #37B943;
+    border:2px solid #37B943;
+}
+.card .card-body form .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .card-body .para{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 20px; */
+}
+.card .card-body p{
+    font-size: 18px ;
+    font-weight: 600;
+    width: 400px;
+    border-top: 4px solid #37B943;
+    padding-top: 10px;
+}
+.card .card-body .link{
+    font-size: 18px ;
+    text-decoration: none;
+    color: #37B943;
+}

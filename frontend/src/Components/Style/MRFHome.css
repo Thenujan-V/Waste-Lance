@@ -1,0 +1,26 @@
+.MRFHome{
+    /* background-color: aliceblue; */
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.MRFHome .link{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    height:30vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 20px rgb(135, 133, 133);
+}
+.MRFHome div h4{
+    font-size: 28px;
+    font-weight: 600;
+}

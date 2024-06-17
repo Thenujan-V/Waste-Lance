@@ -1,0 +1,14 @@
+.navbar{
+    display: flex;
+    background-color: #37B943;
+
+}
+.navbar .navbar-brand{
+    flex: 1;
+}
+.navbar ul{
+    flex: 1;
+    align-items: end;
+    justify-content: end;
+    gap: 10px;
+}

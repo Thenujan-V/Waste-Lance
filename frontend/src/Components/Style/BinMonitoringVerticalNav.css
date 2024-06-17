@@ -1,0 +1,20 @@
+.vertical-navbar {
+    width: 250px;
+    height: 100vh;
+    background-color: #37b943; /* Custom background color */
+    padding: 20px;
+  }
+  
+  .navbar-heading {
+    margin-bottom: 30px;
+  }
+  
+  .nav-link {
+    margin-bottom: 10px;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  

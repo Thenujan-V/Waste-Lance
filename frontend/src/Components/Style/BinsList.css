@@ -1,0 +1,46 @@
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+  }
+  
+  .bin-info {
+    font-weight: bold;
+  }
+  
+  .bin-level {
+    font-size: 0.9em;
+    color: gray;
+  }
+  
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .list-group-item + .list-group-item {
+    margin-top: 10px;
+  }
+  li .buttons{
+    display: flex;
+    gap: 18px;
+  }
+  li .buttons .view{
+    background-color: #37b943;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 2px 7px rgb(148, 144, 144);
+  }
+  li .buttons .delete{
+    background-color: #d12e2e;
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: 2px 2px 7px rgb(148, 144, 144);
+    font-weight: bold;
+  }
