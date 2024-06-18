@@ -14,7 +14,7 @@ const VerticalNavbar = () => {
       </div>
       <ul className="nav-links">
         <li><FontAwesomeIcon icon={faListAlt} /> <a href="/suppliers/waste-contribution">Waste Contribution</a></li>
-        <li><FontAwesomeIcon icon={faCalendarAlt} /> <a href="#">Schedule</a></li>
+        <li><FontAwesomeIcon icon={faCalendarAlt} /> <a href="schedule">Schedule</a></li>
         <li><FontAwesomeIcon icon={faHandHolding} /> <a href="#">Pickups</a></li>
         <li><FontAwesomeIcon icon={faMoneyBill} /> <a href="#">Payments</a></li>
       </ul>

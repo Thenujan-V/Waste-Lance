@@ -15,6 +15,7 @@ import EmployeeProfile from './Components/MRF/EmployeeProfile'
 import VerticalNavbar from './Components/Suppliers/VerticalNavbar'
 import WasteContribution from './Components/Suppliers/WasteContribution'
 import CalendarComponent from './Components/Suppliers/CalendarComponent'
+import WastageForm from './Components/Suppliers/WastageForm'
 
 
 const App = () => {
@@ -36,7 +37,8 @@ const App = () => {
         <Route path="/suppliers" element={<VerticalNavbar />} />
         <Route path="/suppliers/waste-contribution" element={<WasteContribution />} />
         <Route path="/suppliers/waste-contribution/calander" element={<CalendarComponent />} />
-
+        <Route path="/suppliers/schedule" element={<WastageForm />} />
+        
       </Routes>
     </>
   )

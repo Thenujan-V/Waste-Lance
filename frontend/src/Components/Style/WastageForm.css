@@ -1,0 +1,63 @@
+/* Custom styles for the WastageForm component */
+.wasteForm {
+    /* width: 400px; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wasteForm form{
+    width: 800px;
+    background-color: #e2e1e1;
+    border-radius: 20px;
+    padding: 30px;
+}
+.wasteForm h1 {
+    margin-bottom: 20px;
+}
+
+.wasteForm button {
+    width: 30%;
+    padding: 10px;
+    background-color: #36F049;
+    margin-top: 30px;
+}
+.wasteForm button:hover{
+    background-color: #37B943;
+}
+.wasteForm select{
+    border-radius: 50px;
+    width: 21vw;
+}
+.wasteForm label{
+    font-weight: 600;
+}
+
+.wasteForm .wastage-type-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wasteForm .wastage-type-card {
+    flex: 1 1 calc(33.333% - 10px);
+    padding: 15px;
+    border: 1px solid #36F049;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.wasteForm .wastage-type-card.selected {
+    background-color: #37B943;
+    color: white;
+    border-color: #36F049;
+}
+
+.wasteForm .wastage-type-card:hover {
+    background-color: #36F049;
+    color: white;
+    border-color: #37B943;
+}
