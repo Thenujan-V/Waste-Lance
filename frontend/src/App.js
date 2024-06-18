@@ -8,6 +8,8 @@ import HomePage from './Pages/MRF_Pages/HomePage'
 import BinMonitoringPage from './Pages/MRF_Pages/BinMonitoringPage'
 import BinsList from './Components/BinsList'
 import BinDetails from './Components/BinDetails'
+import AddBin from './Components/AddBin'
+import SupplierList from './Components/SupplierList'
 
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/bin-monitoring" element={<BinMonitoringPage />} />
         <Route path="/list-of-bins" element={<BinsList />} />
         <Route path="/bin-details/:bin_id" element={<BinDetails />} />
+        <Route path="/add-bin" element={<AddBin />} />
+        <Route path="/suppliers-list" element={<SupplierList />} />
 
       </Routes>
     </>

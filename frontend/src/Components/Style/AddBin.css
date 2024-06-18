@@ -1,0 +1,24 @@
+.addBin {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .addBin .btn-link {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .addBin .btn-link:hover {
+    color: #0056b3;
+  }
+  
+  .addBin h2 {
+    margin-bottom: 20px;
+  }
+  
+  .addBin .form-control {
+    margin-bottom: 15px;
+  }
+  .addBin button{
+    background-color: #37B943;
+  }

@@ -6,11 +6,11 @@ import mrfHome from './MRFHome.css'
 import binMonitoringVerticalNav from './BinMonitoringVerticalNav.css'
 import binList from './BinsList.css'
 import binDetails from './BinDetails.css'
-
+import addBin from './AddBin.css'
 
 
 
 
 export {
-    loginStyle, registerOption, mrfRegistraion, mrfNavbar, mrfHome, binMonitoringVerticalNav, binList, binDetails
+    loginStyle, registerOption, mrfRegistraion, mrfNavbar, mrfHome, binMonitoringVerticalNav, binList, binDetails, addBin
 }

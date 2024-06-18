@@ -3,13 +3,14 @@ import { binList } from './Style';
 import BinMonitoringVerticalNav from './BinMonitoringVerticalNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const binsData = [
-  { binNo: '#001Bin', sponsor: 'Coc-015', fillLevel: 40 },
-  { binNo: '#002Bin', sponsor: 'Coc-028', fillLevel: 60 },
-  { binNo: '#003Bin', sponsor: 'Coc-039', fillLevel: 30 },
-  { binNo: '#004Bin', sponsor: 'Coc-025', fillLevel: 90 },
-  { binNo: '#499Bin', sponsor: 'Coc-089', fillLevel: 10 },
+  { binNo: '001Bin', sponsor: 'Coc-015', fillLevel: 40 },
+  { binNo: '002Bin', sponsor: 'Coc-028', fillLevel: 60 },
+  { binNo: '003Bin', sponsor: 'Coc-039', fillLevel: 30 },
+  { binNo: '004Bin', sponsor: 'Coc-025', fillLevel: 90 },
+  { binNo: '499Bin', sponsor: 'Coc-089', fillLevel: 10 },
 ];
 
 const BinsList = () => {
@@ -18,7 +19,7 @@ const BinsList = () => {
         <div>
             <BinMonitoringVerticalNav />
         </div>
-        <div className="container mt-3">
+        <div className="container mt-3 w-75">
             <h2 className="text-center mb-4">List of Bins</h2>
             <ul className="list-group">
                 {binsData.map((bin, index) => {
@@ -42,8 +43,8 @@ const BinsList = () => {
                         
                     </div>
                     <div className='buttons'>
-                            <button className='btn view' to={`/bin-details/${bin.binNo}`}>View</button>
-                            <button className='btn delete'>Delete</button>
+                            <Link className='btn view' to={`/bin-details/${bin.binNo}`}>View</Link>
+                            <Link className='btn delete'>Delete</Link>
                         </div>
                     </li>
                 );
