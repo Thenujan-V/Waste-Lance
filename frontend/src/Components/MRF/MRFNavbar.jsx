@@ -21,7 +21,7 @@ const MRFNavbar = () => {
                         <a class="nav-link" href="#"><FontAwesomeIcon icon={faUser} size='2x'/></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><FontAwesomeIcon icon={faRightFromBracket} size='2x'/></a>
+                        <a class="nav-link" href="/login"><FontAwesomeIcon icon={faRightFromBracket} size='2x'/></a>
                     </li>
                 </ul>
             </div>
