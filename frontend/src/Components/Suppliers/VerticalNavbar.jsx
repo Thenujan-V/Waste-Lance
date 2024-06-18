@@ -1,21 +1,20 @@
-// VerticalNavbar.js
-
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faListAlt, faCalendarAlt, faHandHolding, faMoneyBill, faUserCog, faAddressCard, faCog, faInfoCircle, faQuestionCircle, faLock, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { verticalNavbar } from '../Style';
+import {profilePic} from '../Assets'
 
 const VerticalNavbar = () => {
   return (
     <div className="vertical-navbar">
       <div className="profile">
-        <img src="" alt="Profile" className="profile-pic" />
+        <img src={profilePic} alt="Profile" className="profile-pic" />
         <span className="username">Thenuz</span>
       </div>
       <ul className="nav-links">
         <li><FontAwesomeIcon icon={faListAlt} /> <a href="/suppliers/waste-contribution">Waste Contribution</a></li>
-        <li><FontAwesomeIcon icon={faCalendarAlt} /> <a href="schedule">Schedule</a></li>
-        <li><FontAwesomeIcon icon={faHandHolding} /> <a href="#">Pickups</a></li>
+        <li><FontAwesomeIcon icon={faCalendarAlt} /> <a href="/suppliers/schedule">Schedule</a></li>
+        <li><FontAwesomeIcon icon={faHandHolding} /> <a href="/suppliers/pickup-hstory">Pickups</a></li>
         <li><FontAwesomeIcon icon={faMoneyBill} /> <a href="#">Payments</a></li>
       </ul>
       <ul className="nav-links">

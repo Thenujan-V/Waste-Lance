@@ -16,6 +16,7 @@ import VerticalNavbar from './Components/Suppliers/VerticalNavbar'
 import WasteContribution from './Components/Suppliers/WasteContribution'
 import CalendarComponent from './Components/Suppliers/CalendarComponent'
 import WastageForm from './Components/Suppliers/WastageForm'
+import PickupHistory from './Components/Suppliers/PickupHistory'
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/suppliers/waste-contribution" element={<WasteContribution />} />
         <Route path="/suppliers/waste-contribution/calander" element={<CalendarComponent />} />
         <Route path="/suppliers/schedule" element={<WastageForm />} />
+        <Route path="/suppliers/pickup-hstory" element={<PickupHistory />} />
         
       </Routes>
     </>
