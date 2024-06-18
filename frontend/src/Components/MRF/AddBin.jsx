@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { addBin } from './Style';
+import { addBin } from '../Style';
 import BinMonitoringVerticalNav from './BinMonitoringVerticalNav';
 
 const AddBin = () => {

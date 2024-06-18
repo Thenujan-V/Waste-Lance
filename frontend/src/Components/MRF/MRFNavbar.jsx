@@ -1,5 +1,5 @@
 import React from 'react'
-import { mrfNavbar } from './Style'
+import { mrfNavbar } from '../Style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faContactCard, faPhone, faRightFromBracket, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 

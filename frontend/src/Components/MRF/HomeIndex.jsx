@@ -25,10 +25,10 @@ const HomeIndex = () => {
                 <FontAwesomeIcon icon={faUserCog} size='5x'/>
                 <h4>employee management</h4>
             </Link>
-            <Link className="col-lg-4 col-md-4 col-4 link">
+            {/* <Link className="col-lg-4 col-md-4 col-4 link">
                 <FontAwesomeIcon icon={faUserAlt} size='5x'/>
                 <h4>employee profiles</h4>
-            </Link>
+            </Link> */}
             <Link to='/suppliers-list' className="col-lg-4 col-md-4 col-4 link">
                 <FontAwesomeIcon icon={faUsers} size='5x'/>
                 <h4>supplier profiles</h4>

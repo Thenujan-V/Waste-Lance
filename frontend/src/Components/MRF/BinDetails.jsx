@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { binDetails } from './Style';
+import { binDetails } from '../Style';
 import BinMonitoringVerticalNav from './BinMonitoringVerticalNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaintBrush, faTrashAlt } from '@fortawesome/free-solid-svg-icons';

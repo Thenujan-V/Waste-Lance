@@ -6,12 +6,15 @@ import MrfRegistraion from './Pages/MrfRegistraion'
 import SupplierRegistraion from './Pages/SupplierRegistration'
 import HomePage from './Pages/MRF_Pages/HomePage'
 import BinMonitoringPage from './Pages/MRF_Pages/BinMonitoringPage'
-import BinsList from './Components/BinsList'
-import BinDetails from './Components/BinDetails'
-import AddBin from './Components/AddBin'
-import SupplierList from './Components/SupplierList'
-import EmployeeList from './Components/EmployeeList'
-import EmployeeProfile from './Components/EmployeeProfile'
+import BinsList from './Components/MRF/BinsList'
+import BinDetails from './Components/MRF/BinDetails'
+import AddBin from './Components/MRF/AddBin'
+import SupplierList from './Components/MRF/SupplierList'
+import EmployeeList from './Components/MRF/EmployeeList'
+import EmployeeProfile from './Components/MRF/EmployeeProfile'
+import VerticalNavbar from './Components/Suppliers/VerticalNavbar'
+import WasteContribution from './Components/Suppliers/WasteContribution'
+import CalendarComponent from './Components/Suppliers/CalendarComponent'
 
 
 const App = () => {
@@ -30,6 +33,9 @@ const App = () => {
         <Route path="/suppliers-list" element={<SupplierList />} />
         <Route path="/employee-list" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeProfile />} />
+        <Route path="/suppliers" element={<VerticalNavbar />} />
+        <Route path="/suppliers/waste-contribution" element={<WasteContribution />} />
+        <Route path="/suppliers/waste-contribution/calander" element={<CalendarComponent />} />
 
       </Routes>
     </>

@@ -1,6 +1,6 @@
 import React from 'react'
-import MRFNavbar from '../../Components/MRFNavbar'
-import HomeIndex from '../../Components/HomeIndex'
+import MRFNavbar from '../../Components/MRF/MRFNavbar'
+import HomeIndex from '../../Components/MRF/HomeIndex'
 
 const HomePage = () => {
   return (

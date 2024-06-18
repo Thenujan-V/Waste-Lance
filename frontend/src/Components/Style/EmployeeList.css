@@ -1,12 +1,15 @@
 .employeeList .row .employee .card {
     width: 20vw;
     height: 25vh;
+    box-shadow: 3px 3px 10px rgb(142, 141, 141);
 }
 .employeeList .row .employee .card .card-body p{
     width: 12vw;
 }
 .employeeList .row .employee img{
     align-self: self-start;
+    box-shadow: 3px 3px 8px rgb(67, 67, 67);
+
 }
 .employeeList .row .view{
     font-size: 146x;

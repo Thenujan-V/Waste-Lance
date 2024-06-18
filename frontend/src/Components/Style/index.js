@@ -8,10 +8,13 @@ import binList from './BinsList.css'
 import binDetails from './BinDetails.css'
 import addBin from './AddBin.css'
 import employeeList from './EmployeeList.css'
+import verticalNavbar from './VerticalNavbar.css'
+import calendar from './Calendar.css'
 
 
 
 
 export {
-    loginStyle, registerOption, mrfRegistraion, mrfNavbar, mrfHome, binMonitoringVerticalNav, binList, binDetails, addBin, employeeList
+    loginStyle, registerOption, mrfRegistraion, mrfNavbar, mrfHome, binMonitoringVerticalNav, binList, binDetails, addBin,
+     employeeList, verticalNavbar, calendar
 }
