@@ -21,7 +21,7 @@ const HomeIndex = () => {
                 <FontAwesomeIcon icon={faMoneyCheckDollar} size='5x'/>
                 <h4>payments</h4>
             </Link>
-            <Link className="col-lg-4 col-md-4 col-4 link">
+            <Link to='employee-list' className="col-lg-4 col-md-4 col-4 link">
                 <FontAwesomeIcon icon={faUserCog} size='5x'/>
                 <h4>employee management</h4>
             </Link>

@@ -1,0 +1,30 @@
+.employeeList .row .employee .card {
+    width: 20vw;
+    height: 25vh;
+}
+.employeeList .row .employee .card .card-body p{
+    width: 12vw;
+}
+.employeeList .row .employee img{
+    align-self: self-start;
+}
+.employeeList .row .view{
+    font-size: 146x;
+    margin-top: 20px;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 2px 2px 4px #7e7b7b;
+    background-color: #37B943;
+    color: #F5F5F5;
+    font-weight: 600;
+}
+.employeeList .row .collection{
+    font-size: 146x;
+    margin-top: 20px;
+    border-radius: 40px;
+    border: 2px solid #37B943;
+    box-shadow: 2px 2px 4px #7e7b7b;
+    color: #37B943;
+    font-weight: 600;
+    margin-left: 10px;
+}

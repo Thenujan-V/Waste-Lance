@@ -31,7 +31,7 @@ const SupplierList = () => {
 
     return (
         <>
-        <MRFNavbar />>
+        <MRFNavbar />
         <div className="container mt-4">
             <h2 className='text-center m-4'>Suppliers List</h2>
             <div className="list-group">
@@ -44,7 +44,7 @@ const SupplierList = () => {
                         
                         <div className='d-flex' style={{gap:'20px'}}>
                             <button className="btn mr-2" onClick={() => handleShow(supplier)} style={{backgroundColor:'#37B943', fontSize:'18px', fontWeight:'bold', borderRadius:'30px'}}>View</button>
-                            <button className="btn btn-danger" onClick={() => handleDelete(supplier.id)} style={{ fontSize:'18px', fontWeight:'bold', borderRadius:'30px'}} onClick={() => handleDelete(supplier.id)}>Delete</button>
+                            <button className="btn btn-danger" onClick={() => handleDelete(supplier.id)} style={{ fontSize:'18px', fontWeight:'bold', borderRadius:'30px'}} >Delete</button>
                         </div>
                     </div>
                 ))}

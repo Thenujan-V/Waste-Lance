@@ -71,7 +71,6 @@ const binsData = [
 const BinDetails = () => {
   const { bin_id } = useParams();
   const bin = binsData.find(b => b.binNo === bin_id);
-  console.log('bin :', bin.binNo)
 
   if (!bin) {
     return <div>Bin not found</div>;

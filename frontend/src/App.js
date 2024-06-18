@@ -10,6 +10,8 @@ import BinsList from './Components/BinsList'
 import BinDetails from './Components/BinDetails'
 import AddBin from './Components/AddBin'
 import SupplierList from './Components/SupplierList'
+import EmployeeList from './Components/EmployeeList'
+import EmployeeProfile from './Components/EmployeeProfile'
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/bin-details/:bin_id" element={<BinDetails />} />
         <Route path="/add-bin" element={<AddBin />} />
         <Route path="/suppliers-list" element={<SupplierList />} />
+        <Route path="/employee-list" element={<EmployeeList />} />
+        <Route path="/employee/:id" element={<EmployeeProfile />} />
 
       </Routes>
     </>
