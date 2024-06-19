@@ -1,0 +1,37 @@
+/* body {
+    background-color: #f8f9fa;
+    color: #343a40;
+} */
+
+.container {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.list-group-item h5 {
+    margin-bottom: 5px;
+}
+
+.list-group-item small {
+    color: #6c757d;
+}
+
+button.btn {
+    width: 150px;
+    border: 2px solid #37B943;
+    font-weight: bold;
+    color: #37B943;
+}
+button.btn:hover{
+    background-color: #37B943;
+    color: white;
+}
+.text{
+    color: #37B943;
+}

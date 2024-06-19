@@ -9,7 +9,7 @@ const HomeIndex = () => {
     <div>
         <div className="container">
         <div className='row MRFHome'>
-            <Link to='' className="col-lg-4 col-md-4 col-4 link">
+            <Link to='/wastage-collection' className="col-lg-4 col-md-4 col-4 link">
                 <FontAwesomeIcon icon={faCloudArrowDown} size='5x'/>
                 <h4>Waste Collection</h4>
             </Link>

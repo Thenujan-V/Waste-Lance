@@ -11,11 +11,12 @@ import employeeList from './EmployeeList.css'
 import verticalNavbar from './VerticalNavbar.css'
 import calendar from './Calendar.css'
 import wastageForm from './WastageForm.css'
+import wasteCollection from './WasteCollection.css'
 
 
 
 
 export {
     loginStyle, registerOption, mrfRegistraion, mrfNavbar, mrfHome, binMonitoringVerticalNav, binList, binDetails, addBin,
-     employeeList, verticalNavbar, calendar, wastageForm
+     employeeList, verticalNavbar, calendar, wastageForm, wasteCollection
 }
