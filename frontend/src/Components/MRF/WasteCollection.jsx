@@ -47,7 +47,7 @@ const WasteCollection = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container waste-collections">
             <h1 className="text-center my-4">Waste Collection</h1>
             <div className="d-flex justify-content-around mb-4">
                 <button className="btn" onClick={() => setView('wasteType')}>By Waste Type</button>

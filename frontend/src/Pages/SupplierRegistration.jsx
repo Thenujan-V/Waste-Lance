@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { mrfRegistraion } from '../Components/Style';
 
 const SupplierRegistraion = () => {
+  const navigator = useNavigate()
+
   const [formData, setFormData] = useState({
     mrfName: '',
     email: '',
+    work_for:'',
     location: '',
     password: '',
     confirmPassword: ''
@@ -60,10 +63,12 @@ const SupplierRegistraion = () => {
       setFormData({
         mrfName: '',
         email: '',
+        work_for:'',
         location: '',
         password: '',
         confirmPassword: ''
       });
+      navigator('/suppliers')
     }
   };
 
@@ -121,12 +126,12 @@ const SupplierRegistraion = () => {
             </div>
             <div className="mb-3">
               <input
-                type="password"
+                type="text"
                 className={`form-control`}
-                id="password"
-                name="password"
+                id="work_for"
+                name="work_for"
                 placeholder='MRF  you work for(optional)'
-                value={formData.password}
+                value={formData.work_for}
                 onChange={handleChange}
                 
               />

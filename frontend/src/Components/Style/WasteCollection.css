@@ -3,35 +3,35 @@
     color: #343a40;
 } */
 
-.container {
+.waste-collections {
     margin-top: 20px;
 }
 
-.list-group-item {
+.waste-collections .list-group-item {
     border: 1px solid #dee2e6;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 20px;
 }
 
-.list-group-item h5 {
+.waste-collections .list-group-item h5 {
     margin-bottom: 5px;
 }
 
-.list-group-item small {
+.waste-collections .list-group-item small {
     color: #6c757d;
 }
 
-button.btn {
+.waste-collections button.btn {
     width: 150px;
     border: 2px solid #37B943;
     font-weight: bold;
     color: #37B943;
 }
-button.btn:hover{
+.waste-collections button.btn:hover{
     background-color: #37B943;
     color: white;
 }
-.text{
+.waste-collections .text{
     color: #37B943;
 }

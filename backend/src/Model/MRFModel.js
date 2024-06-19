@@ -12,7 +12,7 @@ const schedules = function(schedule){
 schedules.get_pickups = (data) => {
     return new Promise((resolve, reject) => {
         try{
-            const sql_query = `select * from schedule_pickup where status = 'scheduled' `
+            const sql_query = `select * from schedule_pickup `
             dbConnection.execute(sql_query, (err, res) => {
                     if(err){
                         reject(err)

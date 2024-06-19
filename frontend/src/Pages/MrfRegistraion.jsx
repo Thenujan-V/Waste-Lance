@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { mrfRegistraion } from '../Components/Style';
 
 const MrfRegistraion = () => {
+  const navigator = useNavigate()
   const [formData, setFormData] = useState({
     mrfName: '',
     email: '',
@@ -64,6 +65,7 @@ const MrfRegistraion = () => {
         password: '',
         confirmPassword: ''
       });
+      navigator('/')
     }
   };
 

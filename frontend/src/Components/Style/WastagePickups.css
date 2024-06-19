@@ -1,0 +1,158 @@
+/* body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: Arial, sans-serif;
+} */
+
+.collection-schecdule {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-schecdule .header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.collection-schecdule .list-group {
+    margin-bottom: 20px;
+}
+
+.collection-schecdule .list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collection-schecdule .list-group-item h5 {
+    margin-bottom: 5px;
+}
+
+.collection-schecdule .buttons {
+    display: flex;
+    gap: 10px;
+}
+.collection-schecdule td .status-completed, .status-rejected, .status-accepted{
+    background-color: #28a745;
+    border-radius: 30px;
+    width: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.collection-schecdule td .status-rejected{
+    background-color: #6c757d;
+}
+.collection-schecdule td .status-accepted{
+    background-color:blueviolet;
+    color: white;
+}
+.collection-schecdule .btn-view, .btn-reject {
+    border-radius: 30px;
+    width: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+
+.collection-schecdule .btn-view {
+    background-color: #007bff;
+    color: white;
+}
+
+.collection-schecdule .btn-reject {
+    background-color: #dc3545;
+    color: white;
+}
+
+.collection-schecdule .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-schecdule .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+}
+
+.collection-schecdule .popup-content h3 {
+    margin-bottom: 15px;
+}
+
+.collection-schecdule .popup-content p {
+    margin-bottom: 10px;
+}
+
+.collection-schecdule .popup-content .btn-pickup-finish {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #28a745;
+    border: 2px solid #28a745;
+    color: white;
+
+}
+.collection-schecdule .popup-content .btn-accept {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #28a745;
+    border: 2px solid #28a745;
+    color: white;
+
+}
+.collection-schecdule .popup-content .close{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #f20909;
+    border: 2px solid #f20909;
+}
+
+.collection-schecdule .popup-content .btn-pickup-finish:hover {
+    background-color: white;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+.collection-schecdule .popup-content .btn-accept:hover {
+    background-color: white;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+.collection-schecdule .popup-content .close:hover {
+    background-color: #f20909;
+    color: white;
+}

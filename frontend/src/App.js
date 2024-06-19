@@ -18,6 +18,7 @@ import CalendarComponent from './Components/Suppliers/CalendarComponent'
 import WastageForm from './Components/Suppliers/WastageForm'
 import PickupHistory from './Components/Suppliers/PickupHistory'
 import WasteCollection from './Components/MRF/WasteCollection'
+import WastagePickups from './Components/MRF/WastagePickups'
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/bin-monitoring" element={<BinMonitoringPage />} />
         <Route path="/wastage-collection" element={<WasteCollection />} />
+        <Route path="/wastage-pickups" element={<WastagePickups />} />
         <Route path="/list-of-bins" element={<BinsList />} />
         <Route path="/bin-details/:bin_id" element={<BinDetails />} />
         <Route path="/add-bin" element={<AddBin />} />
