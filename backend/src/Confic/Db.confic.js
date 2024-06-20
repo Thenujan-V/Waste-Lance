@@ -1,19 +1,16 @@
-const mysql = require('mysql2')
+const mongoose = require('mongoose')
 
-var connection = mysql.createPool({
-    host:'127.0.0.1',
-    port:'3306',
-    user: 'root',
-    password: 'Thenu2000@',
-    database: 'waste_lance',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-})
+async function dbConnection(){
+    try{
+        await mongoose.connect("mongodb://localhost:27017/waste_lance", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
+        console.log('MongoDB connected successfully');
+    }
+    catch(error){
+        console.error('MongoDB connection failed:', err.message);
+        process.exit(1);    }
+}
 
-connection.getConnection(function(err){
-    if(err) throw err;
-    console.log('conected')
-}) 
-
-module.exports = connection
+module.exports = dbConnection

@@ -7,8 +7,12 @@ Server.use(cors())
 Server.use(express.json())
 Server.use(bodyParser.json())
 
+const dbConnection = require('./src/Confic/Db.confic')
+dbConnection()
+
 const supplierRouter = require('./src/Routers/SupplierRouter')
 const MRFRouter = require('./src/Routers/MRFRouter')
+
 
 Server.use('/api/supplier', supplierRouter)
 Server.use('/api/mrf', MRFRouter)
