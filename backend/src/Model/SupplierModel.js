@@ -114,7 +114,37 @@ supplierSchema.statics.saveOTP = async(mailVerificationOTP, data) => {
     }
 }
 
+supplierSchema.statics.otp_check = async(data) => {
+    try{
+        const findOTP = await supplier.findOne({email : data.email})
+        if(!findOTP){
+            throw new Error('user not found')
+        }
+        else{
+            return findOTP
+        }
+    }
+    catch(error){
+        throw error
+    }
+} 
 
+supplierSchema.statics.update_verify_status = async(data) => {
+    try{
+        const verified = supplier.findOneAndUpdate(
+            {email : data.email},
+            {$set : {'verifiedStatus' : 'verified'}},
+            {new : true}
+        )
+        if(!verified){
+            return res.status(404).json({message : 'user not found'})
+        }
+        return verified
+    }
+    catch(error){
+        throw error
+    }
+}
 
 
 

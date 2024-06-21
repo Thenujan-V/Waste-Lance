@@ -209,3 +209,43 @@ exports.emailVerificationMessage = (req, res) => {
             })
         })
 }
+
+exports.otpCheck = (req, res) => {
+    supplierModels.otp_check(req.body) 
+        .then(checkRes => {
+            if(!checkRes){
+                return res.status(404).json({
+                    error : 'user not found',
+                })
+            }
+            else{
+                if(checkRes.verifiedStatus === req.body.otpNumber){
+                    supplierModels.update_verify_status(req.body, res)
+                        .then(updateRes => {
+                            if(updateRes){
+                                return res.status(200).json({
+                                    error : 'successfully verified your email',
+                                })
+                            }
+                        })
+                        .catch(error => {
+                            return res.status(500).json({
+                                error : 'error occued when update status',
+                                detail : error.message
+                            })
+                        })
+                }
+                else{
+                    return res.status(500).json({
+                        error : 'otp not match',
+                    })
+                }
+            }
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error : 'error occured when otp check',
+                detail : error.message
+            })
+        })
+}
