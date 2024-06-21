@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt');
 
 
+
 const supplierSchema = new mongoose.Schema({
     supplier_name : {
         type : String,
@@ -10,7 +11,8 @@ const supplierSchema = new mongoose.Schema({
     email : {
         type : String,
         required : true,
-        unique : true
+        unique : true,
+        lowercase : true
     },
     location : {
         type : String,
@@ -51,7 +53,21 @@ supplierSchema.pre('save', async function(next) {
     }
 });
 
+supplierSchema.statics.forgot_password = async(data) => {
+    console.log(data.email)
+    try{
+        const user = await supplier.findOne({email : data.email})
+        if(!user){
+             throw new Error('user not found')
+        }
+        return user
+    }
+    catch(error){
+        throw error
+    }
+}
+
+
 
 const supplier = mongoose.model("supplier", supplierSchema)
-
 module.exports = supplier
