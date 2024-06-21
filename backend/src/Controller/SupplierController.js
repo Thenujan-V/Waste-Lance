@@ -139,7 +139,72 @@ exports.resetPassword = (req, res) => {
         })
         .catch(error => {
             return res.status(500).json({
-                error : 'can not change password',
+                error : 'error occured in change password',
+                detail : error.message
+            })
+        })
+}
+
+exports.emailVerificationMessage = (req, res) => {
+    supplierModels.email_verification_message(req.body)
+        .then(async (emailRes) => {
+            if(!emailRes){
+                return res.status(404).json({ error: 'User not found' });
+            }
+
+            const genereteRandomOPT = () => {
+                const randomNo = Math.random()
+                const randomSixDigitNo = Math.floor(randomNo * 1000000)
+                const verificationOTP = randomSixDigitNo.toString().padStart(6, '0');
+
+                return verificationOTP
+            }
+            const mailVerificationOTP = genereteRandomOPT()
+
+            supplierModels.saveOTP(mailVerificationOTP, req.body, res)
+                .then(async (saveOTPRes) => {
+                    if(!saveOTPRes){
+                        return res.status(404).json({
+                            error : 'user not found',
+                            detail : error.message
+                        })
+                    }
+                    else{
+                        const transporter = nodemailer.createTransport({
+                            service: 'Gmail',
+                            auth: {
+                            user: 'vthenujan7400@gmail.com',
+                            pass: 'bnluppbspqmvnnse',
+                            },
+                        })
+            
+                        const mailOptions = {
+                            to: saveOTPRes.email,
+                            from: 'vthenujan7400@gmail.com',
+                            subject: 'Email Verification OTP',
+                            text: `You are receiving this email to verify your email address.\n\n
+                                  *** Your OTP (One-Time Password) is: ${mailVerificationOTP} ***\n\n
+                                  Please enter this OTP on the verification page to complete the process.\n\n
+                                  If you did not request this, please ignore this email.\n`,
+                        };
+            
+                          await transporter.sendMail(mailOptions)
+            
+                          return res.status(200).json({
+                            message: 'mail verification email sent'
+                        })
+                    }
+                })
+                .catch(error => {
+                    return res.status(500).json({
+                        error : 'error occured when save OTP',
+                        detail : error.message
+                    })
+                })
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error : 'error occured when mail verification',
                 detail : error.message
             })
         })

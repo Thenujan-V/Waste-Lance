@@ -35,6 +35,10 @@ const supplierSchema = new mongoose.Schema({
     role : {
         type : String,
         default : 'supplier'
+    },
+    verifiedStatus : {
+        type : String,
+        default : 'not verified'
     }
 
 })
@@ -77,6 +81,44 @@ supplierSchema.statics.reset_password = async(id, data) => {
         throw error
     }
 }
+
+supplierSchema.statics.email_verification_message = async(data) => {
+    try{
+        const user = await supplier.findOne({email : data.email})
+        if(user){
+            return user
+        }
+        else{
+            throw new Error('user not found')
+        }
+    }
+    catch(error){
+        throw error
+    }
+}
+
+supplierSchema.statics.saveOTP = async(mailVerificationOTP, data) => {
+    try{
+        const savedOTPNo = supplier.findOneAndUpdate(
+            {email : data.email},
+            {$set : {'verifiedStatus' : mailVerificationOTP}},
+            {new : true}
+        )
+        if(!savedOTPNo){
+            return res.status(404).json({message : 'user not found'})
+        }
+        return savedOTPNo
+    }
+    catch(error){
+        throw error
+    }
+}
+
+
+
+
+
+
 
 
 
