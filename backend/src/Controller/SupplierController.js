@@ -84,7 +84,7 @@ exports.forgotPassword = (req, res) => {
             const secretKey = 'qwertyuioplkjhgfdsazxcvbnmloiuytrfdcvbnjytredcvbnjuytfcvbnjy'
 
             const resetToken = jwtToken.sign(payloads, secretKey, {expiresIn : '24h'})
-            
+            console.log('reset :', resetToken)
             const transporter = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
@@ -113,6 +113,34 @@ exports.forgotPassword = (req, res) => {
             return res.status(500).json({
                 error : 'user not found',
                 detail : err.message
+            })
+        })
+}
+
+exports.resetPassword = (req, res) => {
+    if(!req.params.id || !req.body){
+        return res.status(400).json({
+            error: 'Please provide user ID and new password'
+        })
+    }
+
+    supplierModels.reset_password(req.params.id, req.body, res)
+        .then(resetRes => {
+            if(resetRes){
+                return res.status(200).json({
+                    message:'successfully update password'
+                })
+            }
+            else{
+                return res.status(404).json({
+                    error: 'User not found'
+                })
+            }
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error : 'can not change password',
+                detail : error.message
             })
         })
 }

@@ -67,6 +67,17 @@ supplierSchema.statics.forgot_password = async(data) => {
     }
 }
 
+supplierSchema.statics.reset_password = async(id, data) => {
+    try{
+        const hashedPassword = await bcrypt.hash(data.password, 10)
+        const reset = await supplier.findByIdAndUpdate(id, {password : hashedPassword}, {new : true})
+        return reset
+    }
+    catch(error){
+        throw error
+    }
+}
+
 
 
 const supplier = mongoose.model("supplier", supplierSchema)

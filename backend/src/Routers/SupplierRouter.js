@@ -5,7 +5,7 @@ const supplierController = require('../../src/Controller/SupplierController')
 router.post('/supplier-signup', supplierController.suppliersSignup)
 router.post('/supplier-signin', supplierController.suppliersSignin)
 router.post('/forgot-password', supplierController.forgotPassword)
-router.post('/reset-password', supplierController.resetPassword)
+router.post('/reset-password/:id', supplierController.resetPassword)
 
 
 module.exports = router
