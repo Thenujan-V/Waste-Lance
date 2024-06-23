@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const supplierModels = require('../Model/SupplierModel')
+
 const pickupsScheema = new Schema({
     waste_type : {
         type : String,
@@ -41,6 +43,11 @@ const pickupsScheema = new Schema({
 
 pickupsScheema.statics.schedule_pickups = async(body) => {
     try{
+        const existingUser = await supplierModels.findOne({_id : body.supplier_id})
+        console.log(existingUser)
+        if(!existingUser){
+            return
+        }
         const pickupSchedule = new schedule_pickups({
             waste_type : body.waste_type,
             location : body.location,
