@@ -18,6 +18,7 @@ exports.suppliersSignup = async (req, res) => {
             email : req.body.email,
             location : req.body.location,
             work_for : req.body.work_for,
+            phone_number : req.body.phone_number,
             password : req.body.password,
        })
 
@@ -40,7 +41,7 @@ exports.suppliersSignin = async(req, res) => {
                 return res.send('password not exist')
             }
             const passwordMatch = await bcrypt.compare(req.body.password, user.password)
-            if(passwordMatch){
+            if(passwordMatch && user.activeStatus === true){
                 const payload = {
                     id : user._id 
                 }

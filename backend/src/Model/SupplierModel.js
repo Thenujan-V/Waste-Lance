@@ -21,6 +21,10 @@ const supplierSchema = new mongoose.Schema({
     work_for : {
         type : String
     },
+    phone_number : {
+        type : Number,
+        required : true
+    },
     password : {
         type : String
     }, 
@@ -39,6 +43,10 @@ const supplierSchema = new mongoose.Schema({
     verifiedStatus : {
         type : String,
         default : 'not verified'
+    },
+    activeStatus : {
+        type : Boolean,
+        default : true
     }
 
 })

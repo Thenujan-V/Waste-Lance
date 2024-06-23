@@ -11,11 +11,11 @@ const dbConnection = require('./src/Confic/Db.confic')
 dbConnection()
 
 const supplierRouter = require('./src/Routers/SupplierRouter')
-const MRFRouter = require('./src/Routers/MRFRouter')
+const scheduleRouter = require('./src/Routers/ScheduleRouter')
 
 
 Server.use('/api/supplier', supplierRouter)
-Server.use('/api/mrf', MRFRouter)
+Server.use('/api/schedule', scheduleRouter) 
 
 module.exports = Server
 
