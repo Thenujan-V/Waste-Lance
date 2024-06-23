@@ -30,6 +30,7 @@ const pickupsScheema = new Schema({
     },
     acceptance_status : {
         type : Boolean,
+        default : null
     },
     supplier : {
         type: Schema.Types.ObjectId,
@@ -65,7 +66,35 @@ pickupsScheema.statics.schedule_pickups = async(body) => {
     }
 }
 
+pickupsScheema.statics.pickup_details = async(id) => {
+    try{
+        const existingUser = await supplierModels.findOne({_id : id})
+        console.log(existingUser)
+        if(!existingUser){
+            throw new Error('user not found')
+        }
+        const details = await schedule_pickups.find({supplier : id})
+        if(!details){
+            return
+        }
+        else{
+            return details
+        }
+    }
+    catch(error){
+        throw error
+    }
+}
 
+pickupsScheema.statics.all_pickup_details = async() => {
+        try{
+            const response = schedule_pickups.find()
+            return response
+        }
+        catch(error){
+            throw error
+        }
+}
 
 
 
