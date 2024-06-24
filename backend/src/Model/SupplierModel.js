@@ -154,8 +154,39 @@ supplierSchema.statics.update_verify_status = async(data) => {
     }
 }
 
+supplierSchema.statics.delete_account = async(userId) => {
+    try{
+        const existUser = await supplier.findOne({_id : userId})
+        if(!existUser){
+            throw new Error('User not found')
+        }
+        const deleteUser = await supplier.findByIdAndUpdate(userId, {activeStatus : false}, {new : true})
+        return deleteUser
+    }
+    catch(error){
+        throw error
+    }
+}
 
+supplierSchema.statics.edit_account = async(userId, editData) => {
+    try{
+        const existUser = await supplier.findOne({_id : userId})
+        if(!existUser){
+            throw new Error('User not found')
+        }
 
+        const editUser = await supplier.findByIdAndUpdate(
+            userId,
+            {$set : editData},
+            { new: true, runValidators: true }
+        )
+        return editUser
+
+    }
+    catch(error){
+        throw error
+    }
+}
 
 
 

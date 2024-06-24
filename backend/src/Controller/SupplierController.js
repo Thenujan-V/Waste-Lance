@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwtToken = require('jsonwebtoken')
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
+const { error } = require('console');
 
 exports.suppliersSignup = async (req, res) => {
    try{
@@ -246,6 +247,75 @@ exports.otpCheck = (req, res) => {
         .catch(error => {
             return res.status(500).json({
                 error : 'error occured when otp check',
+                detail : error.message
+            })
+        })
+}
+
+exports.deleteAccount = (req, res) => {
+        if(!req.params.id){
+            return res.status(400).json({
+                error:'id not provided'
+            })
+        }
+    supplierModels.delete_account(req.params.id)
+        .then(deleteRes => {
+            if (!deleteRes) {
+                return res.status(404).json({
+                    error: 'User not found'
+                });
+            }
+
+            return res.status(200).json({
+                message:'delete successfully'
+            })
+        })
+        .catch(error => {
+            if (error.message === 'User not found') {
+                return res.status(404).json({
+                    error: error.message
+                });
+            }
+            return res.status(500).json({
+                error:'error occured when account delete',
+                detail : error.message
+            })
+        })
+
+}
+
+exports.editAccount = (req, res) => {
+    const {supplier_name, email, location, work_for, phone_number} = req.body
+
+    const updateFields = {}
+
+    if(supplier_name) updateFields.supplier_name = supplier_name 
+    if(email) updateFields.email = email 
+    if(location) updateFields.location = location 
+    if(work_for) updateFields.work_for = work_for 
+    if(phone_number) updateFields.phone_number = phone_number
+    
+    if(Object.keys(updateFields).length === 0){
+        return res.status(400).json({
+            error: 'No fields provided to update'
+        })
+    }
+
+    supplierModels.edit_account(req.params.id, updateFields)
+        .then(editRes => {
+            if (!editRes) {
+                return res.status(404).json({
+                    error: 'User not found'
+                });
+            }
+            return res.status(200).json({
+                message: 'Profile updated successfully',
+                user: editRes
+            });
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error:'error occured when account edit',
                 detail : error.message
             })
         })
