@@ -10,6 +10,7 @@ router.post('/forgot-password', supplierController.forgotPassword)
 router.post('/reset-password/:id', supplierController.resetPassword)
 router.put('/delete-account/:id', supplierController.deleteAccount)
 router.put('/edit-account/:id', supplierController.editAccount)
+router.put('/edit-password/:id', supplierController.editPassword)
 router.get('/show-account/:id', supplierController.showAccount)
 
 

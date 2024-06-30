@@ -208,6 +208,40 @@ supplierSchema.statics.show_account = async (userId) => {
     }
 }
 
+supplierSchema.statics.edit_password = async (userId, data) => {
+    try{
+        const existUser = await supplier.findOne({_id : userId})
+        if(!existUser){
+            throw new Error('User not found')
+        }
+
+        const oldPassword = existUser.password
+        const passwordMatch = await bcrypt.compare(data.oldPassword, oldPassword)
+        console.log(oldPassword)
+
+        if(passwordMatch){
+            const hashPassword = await bcrypt.hash(data.newPassword, 10)
+            try{
+                const passwordReset = await supplier.findByIdAndUpdate(
+                    userId,
+                    {$set : {'password' : hashPassword}},
+                    {new : true}
+                )
+                return passwordReset
+            }
+            catch(error){
+                throw error
+            }
+        }
+        else{
+            throw new Error('Old Password not match')
+        }
+    }
+    catch(error){
+        throw error
+    }
+}
+
 
 
 const supplier = mongoose.model("supplier", supplierSchema)

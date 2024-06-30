@@ -345,3 +345,28 @@ exports.showAccount = (req, res) => {
             })
         })
 }
+
+exports.editPassword = async (req, res) => {
+    if(!req.params.id || !req.body){
+        return res.status(404).json({
+            error: 'Id not given'
+        })
+    }
+    supplierModels.edit_password(req.params.id, req.body)
+        .then(resetRes => {
+            if(!resetRes){
+                return res.status(500).json({
+                    error:'Can not changed password'
+                })
+            }
+            return res.status(200).json({
+                edit_password : 'success'    
+            })
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error:'error occured when pssword edit',
+                detail : error.message
+            })
+        })
+}
