@@ -32,6 +32,10 @@ const pickupsScheema = new Schema({
         type : Boolean,
         default : null
     },
+    pickup_status : {
+        type : Boolean,
+        default : null
+    },
     supplier : {
         type: Schema.Types.ObjectId,
         ref : 'suppliers'

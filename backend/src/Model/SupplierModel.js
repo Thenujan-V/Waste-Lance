@@ -180,6 +180,13 @@ supplierSchema.statics.edit_account = async(userId, editData) => {
             {$set : editData},
             { new: true, runValidators: true }
         )
+        if(editData.email){
+            await supplier.findByIdAndUpdate(
+                userId,
+                {$set : {'verifiedStatus' : 'not verified'}},
+                { new: true }
+            )
+        }
         return editUser
 
     }
@@ -188,6 +195,18 @@ supplierSchema.statics.edit_account = async(userId, editData) => {
     }
 }
 
+supplierSchema.statics.show_account = async (userId) => {
+    try{
+        const existUser = supplier.findOne({_id : userId})
+        if(!existUser){
+            throw new Error('User not found')
+        }
+        return existUser
+    }
+    catch(error){
+        throw error
+    }
+}
 
 
 

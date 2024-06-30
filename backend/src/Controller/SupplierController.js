@@ -306,7 +306,7 @@ exports.editAccount = (req, res) => {
             if (!editRes) {
                 return res.status(404).json({
                     error: 'User not found'
-                });
+                })
             }
             return res.status(200).json({
                 message: 'Profile updated successfully',
@@ -314,6 +314,31 @@ exports.editAccount = (req, res) => {
             });
         })
         .catch(error => {
+            return res.status(500).json({
+                error:'error occured when account edit',
+                detail : error.message
+            })
+        })
+}
+
+exports.showAccount = (req, res) => {
+    if(!req.params.id){
+        return res.status(404).json({
+            error: 'Id not given'
+        })
+    }
+    supplierModels.show_account(req.params.id)
+        .then(accountRes => {
+            if(!accountRes){
+                return res.status(404).json({
+                    error: 'User not found'
+                })
+            }
+            return res.status(200).json({
+                userDetails : accountRes
+            })
+        })
+        .catch(error =>{
             return res.status(500).json({
                 error:'error occured when account edit',
                 detail : error.message
