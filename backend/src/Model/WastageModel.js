@@ -30,6 +30,17 @@ wastageTypesSchema.statics.add_wastage_types = async (data) => {
     }
 }
 
+wastageTypesSchema.statics.get_wastage_types = async () => {
+    try{
+        const getWastageResponse = await wastage_type.find()
+        return getWastageResponse
+    }
+    catch(error){
+        throw error
+    }
+}
+
+
 
 
 

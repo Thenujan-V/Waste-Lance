@@ -21,3 +21,24 @@ exports.addWastageTypes = (req, res) => {
             })
         })
 }
+
+exports.getWastageTypes = (req,res) => {
+    wastageModels.get_wastage_types()
+        .then(wastageRes => {
+            if(!wastageRes){
+                return res.status(500).json({
+                    error : 'Internal Server Error',
+                    detail : error.message
+                })
+            }
+            return res.status(201).json({
+                detail : wastageRes
+            })
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error : 'Internal Server Error',
+                detail : error.message
+            })
+        })
+}
