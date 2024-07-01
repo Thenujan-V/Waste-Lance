@@ -12,10 +12,12 @@ dbConnection()
 
 const supplierRouter = require('./src/Routers/SupplierRouter')
 const scheduleRouter = require('./src/Routers/ScheduleRouter')
+const wastageRouter = require('./src/Routers/WastageRouter')
 
 
 Server.use('/api/supplier', supplierRouter)
 Server.use('/api/schedule', scheduleRouter) 
+Server.use('/api/wastage', wastageRouter) 
 
 module.exports = Server
 

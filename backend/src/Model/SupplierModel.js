@@ -214,11 +214,8 @@ supplierSchema.statics.edit_password = async (userId, data) => {
         if(!existUser){
             throw new Error('User not found')
         }
-
         const oldPassword = existUser.password
         const passwordMatch = await bcrypt.compare(data.oldPassword, oldPassword)
-        console.log(oldPassword)
-
         if(passwordMatch){
             const hashPassword = await bcrypt.hash(data.newPassword, 10)
             try{
